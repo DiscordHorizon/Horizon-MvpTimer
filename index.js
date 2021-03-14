@@ -4,6 +4,7 @@ const { discord, guildId, avatar, channel } = require("./utils/horizonUtils");
 const { timer } = require("./commands/timer");
 
 require("./database");
+require('./server');
 
 const bot = new Discord.Client();
 
