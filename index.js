@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const mvpModel = require("./models/mvp");
-const { discord, guildId, avatar, channel } = require("./utils/horizonUtils");
+const { discord, guildId, avatar, channel, audios } = require("./utils/horizonUtils");
 const { timer } = require("./commands/timer");
 
 require("./database");
@@ -27,8 +27,8 @@ async function mvpAlert(player, name, spot) {
 
     if (channelId) {
         const connection = await guild.channels.cache.get(channelId).join();
-        connection.play("./assets/tuturu.mp3").on("finish", () => {
-            connection.play("./assets/mvpAlert.mp3").on("finish", () => {
+        connection.play(audios.tuturu).on("finish", () => {
+            connection.play(audios.mvpAlert).on("finish", () => {
                 guild.channels.cache.get(channelId).leave();
             });
         });
