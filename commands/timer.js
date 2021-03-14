@@ -268,6 +268,8 @@ async function mvpUpdate(message, mvp, msg, hour, minutes, spot) {
     if (nextMinutes >= 60) {
         finalMinutes = nextMinutes - 60;
         nextHour++;
+    } else {
+        finalMinutes = nextMinutes;
     }
 
     if (nextHour >= 24) {
