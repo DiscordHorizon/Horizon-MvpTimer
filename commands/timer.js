@@ -282,7 +282,7 @@ async function mvpUpdate(message, mvp, msg, hour, minutes, spot) {
 
     nextRespawn.setHours(finalHour, finalMinutes);
 
-    await mvp.update({
+    await mvp.updateOne({
         alive: false,
         player: message.author.id,
         nextRespawn: nextRespawn,
@@ -319,7 +319,7 @@ module.exports = {
             } else {
                 mvpList.addField(
                     `\`${index + 1} -\` ${mvp.name}`,
-                    `Morto às \`${mvp.nextRespawn}\``,
+                    `Renascerá às \`${mvp.nextRespawn}\``,
                     true
                 );
             }
