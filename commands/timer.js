@@ -76,10 +76,11 @@ async function mvpCheck(message, mvp, msg) {
 
         if (content === "sim") {
             getHour(message, mvp, msg);
+        } else if (content === "nao") {
+            msg.edit(cancelMsg);
         }
     } catch (error) {
         message.channel.activeCollector = false;
-        msg.edit(cancelMsg);
     }
 }
 
@@ -252,10 +253,11 @@ async function timeCheck(message, mvp, msg, hour, minutes, spot) {
 
         if (content === "sim") {
             mvpUpdate(message, mvp, msg, hour, minutes, spot);
+        } else if (content === "nao") {
+            msg.edit(cancelMsg);
         }
     } catch (error) {
         message.channel.activeCollector = false;
-        msg.edit(cancelMsg);
     }
 }
 
