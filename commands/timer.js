@@ -272,10 +272,10 @@ async function mvpUpdate(message, mvp, msg, hour, minutes, spot) {
 
     if (nextHour >= 24) {
         finalHour = nextHour - 24;
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, "0");
-        dd++;
-        nextRespawn.setDate(dd);
+        // var today = new Date();
+        // var dd = String(today.getDate()).padStart(2, "0");
+        // dd++;
+        // nextRespawn.setDate(dd);
     } else {
         finalHour = nextHour;
     }
